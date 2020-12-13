@@ -10,6 +10,10 @@
 
 #pragma warning disable 1591
 
+using System;
+using System.Data;
+using System.Windows.Forms;
+
 namespace test {
     
     
@@ -2464,6 +2468,11 @@ namespace test {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+
+            internal void AddLOPRow(DataRow dataRow)
+            {
+                throw new NotImplementedException();
             }
         }
         
@@ -7212,6 +7221,8 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         public virtual int Update(string TENLOP, string MAKH, string Original_MALOP, string Original_TENLOP, string Original_MAKH) {
             return this.Update(Original_MALOP, TENLOP, MAKH, Original_MALOP, Original_TENLOP, Original_MAKH);
         }
+
+
     }
     
     /// <summary>

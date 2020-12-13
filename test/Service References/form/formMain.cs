@@ -20,7 +20,7 @@ namespace test.form
             txtGroup.Text = "Nhom: " + Program.mGroup;
             if (Program.mKhoa == 2)
             {
-                btnClass.Enabled = btnStudent.Enabled = btnMark.Enabled = btnSubject.Enabled = false;
+                btnClass.Enabled = btnChuyenLop.Enabled = btnMark.Enabled = btnSubject.Enabled = false;
                 btnInDSSV.Enabled = btnInDSThi.Enabled = btnInDiem.Enabled = btnInPD.Enabled = false;
             }
             else
@@ -76,7 +76,16 @@ namespace test.form
         //mở form Sinh viên
         private void btnStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            ChuyenLop frm = (ChuyenLop)CheckExists(typeof(ChuyenLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.chuyenLop = new ChuyenLop();
+
+                Program.chuyenLop.MdiParent = this;
+
+                Program.chuyenLop.Show();
+            }
         }
 
         //mở form Môn học
@@ -103,7 +112,16 @@ namespace test.form
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            RpDSSV frm = (RpDSSV)CheckExists(typeof(RpDSSV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.DSSV = new RpDSSV();
+
+                Program.DSSV.MdiParent = this;
+
+                Program.DSSV.Show();
+            }
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -128,6 +146,8 @@ namespace test.form
             {
                 Close();   
                 Program.login.Visible = true;
+                Program.Bds_Dspm.RemoveFilter();
+                Program.login.Form1_Load();
             }
         }
 

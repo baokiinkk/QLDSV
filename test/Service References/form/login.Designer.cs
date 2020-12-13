@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label mASVLabel;
+            System.Windows.Forms.Label tENLabel;
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.edtTaiKhoan = new DevExpress.XtraEditors.TextEdit();
@@ -37,14 +39,41 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.cb = new System.Windows.Forms.ComboBox();
-            this.vDSPHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet1 = new test.QLDSVDataSet();
-            this.v_DS_PHANMANHTableAdapter1 = new test.QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENTableAdapter = new test.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
+            this.tableAdapterManager = new test.QLDSVDataSetTableAdapters.TableAdapterManager();
+            this.mASVLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            mASVLabel = new System.Windows.Forms.Label();
+            tENLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.edtTaiKhoan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtMatKhau.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mASVLabel
+            // 
+            mASVLabel.AutoSize = true;
+            mASVLabel.Location = new System.Drawing.Point(407, 83);
+            mASVLabel.Name = "mASVLabel";
+            mASVLabel.Size = new System.Drawing.Size(38, 13);
+            mASVLabel.TabIndex = 9;
+            mASVLabel.Text = "MASV:";
+            // 
+            // tENLabel
+            // 
+            tENLabel.AutoSize = true;
+            tENLabel.Location = new System.Drawing.Point(407, 128);
+            tENLabel.Name = "tENLabel";
+            tENLabel.Size = new System.Drawing.Size(30, 13);
+            tENLabel.TabIndex = 11;
+            tENLabel.Text = "TEN:";
             // 
             // label3
             // 
@@ -56,7 +85,6 @@
             this.label3.Size = new System.Drawing.Size(103, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Đăng Nhập";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -113,34 +141,75 @@
             // 
             // cb
             // 
-            this.cb.DataSource = this.vDSPHANMANHBindingSource;
-            this.cb.DisplayMember = "TENCN";
             this.cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb.FormattingEnabled = true;
             this.cb.Location = new System.Drawing.Point(55, 75);
             this.cb.Name = "cb";
             this.cb.Size = new System.Drawing.Size(198, 21);
             this.cb.TabIndex = 7;
-            this.cb.ValueMember = "TenServer";
             this.cb.SelectedIndexChanged += new System.EventHandler(this.cb_SelectedIndexChanged);
-            // 
-            // vDSPHANMANHBindingSource
-            // 
-            this.vDSPHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.vDSPHANMANHBindingSource.DataSource = this.qLDSVDataSet1;
             // 
             // qLDSVDataSet1
             // 
             this.qLDSVDataSet1.DataSetName = "QLDSVDataSet";
             this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // v_DS_PHANMANHTableAdapter1
+            // sINHVIENBindingSource
             // 
-            this.v_DS_PHANMANHTableAdapter1.ClearBeforeFill = true;
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource.DataSource = this.qLDSVDataSet1;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.GIANGVIENTableAdapter = null;
+            this.tableAdapterManager.HOCPHITableAdapter = null;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = this.sINHVIENTableAdapter;
+            this.tableAdapterManager.UpdateOrder = test.QLDSVDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // mASVLookUpEdit
+            // 
+            this.mASVLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sINHVIENBindingSource, "MASV", true));
+            this.mASVLookUpEdit.Location = new System.Drawing.Point(451, 80);
+            this.mASVLookUpEdit.Name = "mASVLookUpEdit";
+            this.mASVLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.mASVLookUpEdit.Properties.DataSource = this.sINHVIENBindingSource;
+            this.mASVLookUpEdit.Properties.DisplayMember = "MASV";
+            this.mASVLookUpEdit.Properties.ValueMember = "MASV";
+            this.mASVLookUpEdit.Size = new System.Drawing.Size(100, 20);
+            this.mASVLookUpEdit.TabIndex = 10;
+            this.mASVLookUpEdit.EditValueChanged += new System.EventHandler(this.mASVLookUpEdit_EditValueChanged);
+            // 
+            // tENTextEdit
+            // 
+            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sINHVIENBindingSource, "TEN", true));
+            this.tENTextEdit.Location = new System.Drawing.Point(443, 125);
+            this.tENTextEdit.Name = "tENTextEdit";
+            this.tENTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.tENTextEdit.TabIndex = 12;
+            // 
+            // sINHVIENBindingSource1
+            // 
+            this.sINHVIENBindingSource1.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource1.DataSource = this.qLDSVDataSet1;
             // 
             // Main
             // 
-            this.ClientSize = new System.Drawing.Size(313, 292);
+            this.ClientSize = new System.Drawing.Size(821, 386);
+            this.Controls.Add(tENLabel);
+            this.Controls.Add(this.tENTextEdit);
+            this.Controls.Add(mASVLabel);
+            this.Controls.Add(this.mASVLookUpEdit);
             this.Controls.Add(this.cb);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -153,8 +222,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edtTaiKhoan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtMatKhau.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,8 +253,12 @@
         private QLDSVDataSet qLDSVDataSet;
         private QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
         private QLDSVDataSet qLDSVDataSet1;
-        private System.Windows.Forms.BindingSource vDSPHANMANHBindingSource;
-        private QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter1;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        private QLDSVDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraEditors.LookUpEdit mASVLookUpEdit;
+        private DevExpress.XtraEditors.TextEdit tENTextEdit;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
     }
 }
 

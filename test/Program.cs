@@ -19,6 +19,7 @@ namespace test
         public static String mlogin = "";
         public static String password = "";
         public static int mKhoa = 0;
+        public static int mKhoatmp = 0;
         public static String database = "QLDSV";
         public static String remotelogin = "HTKN";
         public static String remotepassword = "123";
@@ -29,9 +30,12 @@ namespace test
         public static Main login;
         public static formMain formMain;
         public static Lop lop;
-        public static int mChinhanh = 0;
+        public static ChuyenLop chuyenLop;
 
-        public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
+        public static RpDSSV DSSV;
+        public static int mChinhanh = 0;
+        public static BindingSource Bds_Dspm = new BindingSource();
+        public static BindingSource bds_dspm; // giữ bdsPM khi đăng nhập
         public static String serverName;
         public static int KetNoi()
         {

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnClass = new DevExpress.XtraBars.BarButtonItem();
-            this.btnStudent = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChuyenLop = new DevExpress.XtraBars.BarButtonItem();
             this.btnSubject = new DevExpress.XtraBars.BarButtonItem();
             this.btnMark = new DevExpress.XtraBars.BarButtonItem();
             this.btnFee = new DevExpress.XtraBars.BarButtonItem();
@@ -74,7 +74,7 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnClass,
-            this.btnStudent,
+            this.btnChuyenLop,
             this.btnSubject,
             this.btnMark,
             this.btnFee,
@@ -104,14 +104,14 @@
             this.btnClass.Name = "btnClass";
             this.btnClass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClass_ItemClick);
             // 
-            // btnStudent
+            // btnChuyenLop
             // 
-            this.btnStudent.Caption = "Sinh viên";
-            this.btnStudent.Id = 2;
-            this.btnStudent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.Image")));
-            this.btnStudent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.LargeImage")));
-            this.btnStudent.Name = "btnStudent";
-            this.btnStudent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStudent_ItemClick);
+            this.btnChuyenLop.Caption = "Chuyển lớp";
+            this.btnChuyenLop.Id = 2;
+            this.btnChuyenLop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.Image")));
+            this.btnChuyenLop.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.LargeImage")));
+            this.btnChuyenLop.Name = "btnChuyenLop";
+            this.btnChuyenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStudent_ItemClick);
             // 
             // btnSubject
             // 
@@ -223,7 +223,7 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnStudent);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnChuyenLop);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -371,7 +371,7 @@
         private System.Windows.Forms.ToolStripStatusLabel txtGroup;
         private DevExpress.XtraBars.BarButtonItem btnClass;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem btnStudent;
+        private DevExpress.XtraBars.BarButtonItem btnChuyenLop;
         private DevExpress.XtraBars.BarButtonItem btnSubject;
         private DevExpress.XtraBars.BarButtonItem btnMark;
         private DevExpress.XtraBars.BarButtonItem btnFee;

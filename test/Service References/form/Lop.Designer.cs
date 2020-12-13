@@ -29,26 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lop));
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet = new test.QLDSVDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.vDSPHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtKhoa = new System.Windows.Forms.Label();
             this.lOPTableAdapter = new test.QLDSVDataSetTableAdapters.LOPTableAdapter();
             this.tableAdapterManager = new test.QLDSVDataSetTableAdapters.TableAdapterManager();
             this.sINHVIENTableAdapter = new test.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
             this.lOPBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -57,9 +54,12 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.lOPBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.v_DS_PHANMANHTableAdapter = new test.QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -75,12 +75,15 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGhi = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntRedo = new System.Windows.Forms.ToolStripMenuItem();
+            this.lamMơiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingNavigator)).BeginInit();
             this.lOPBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
@@ -92,14 +95,14 @@
             // 
             this.lOPGridControl.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            gridLevelNode1.RelationName = "Level1";
+            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Left;
+            gridLevelNode2.RelationName = "Level1";
             this.lOPGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.lOPGridControl.Location = new System.Drawing.Point(0, 90);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(582, 213);
+            this.lOPGridControl.Size = new System.Drawing.Size(563, 407);
             this.lOPGridControl.TabIndex = 4;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -151,13 +154,16 @@
             this.gridView1.Appearance.VertLine.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKH,
-            this.colMALOP,
-            this.colTENLOP});
+            this.colTENLOP,
+            this.colMALOP});
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowViewCaption = true;
             this.gridView1.PaintStyleName = "Skin";
+            this.gridView1.ViewCaption = "Danh sách lớp";
             // 
             // colMAKH
             // 
@@ -166,14 +172,7 @@
             this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
-            // 
-            // colMALOP
-            // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.ReadOnly = true;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 0;
+            this.colMAKH.Width = 54;
             // 
             // colTENLOP
             // 
@@ -181,6 +180,15 @@
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 212;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
+            this.colMALOP.Width = 103;
             // 
             // sINHVIENBindingSource
             // 
@@ -192,21 +200,13 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DataSource = this.vDSPHANMANHBindingSource;
-            this.comboBox1.DisplayMember = "TENCN";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(201, 29);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 21);
+            this.comboBox1.Size = new System.Drawing.Size(714, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "TENSERVER";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // vDSPHANMANHBindingSource
-            // 
-            this.vDSPHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.vDSPHANMANHBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // txtKhoa
             // 
@@ -244,10 +244,10 @@
             // 
             // lOPBindingNavigator
             // 
-            this.lOPBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.lOPBindingNavigator.AddNewItem = null;
             this.lOPBindingNavigator.BindingSource = this.lOPBindingSource;
             this.lOPBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.lOPBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.lOPBindingNavigator.DeleteItem = null;
             this.lOPBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -261,7 +261,9 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.lOPBindingNavigatorSaveItem,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.lOPBindingNavigator.Location = new System.Drawing.Point(0, 65);
             this.lOPBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.lOPBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -269,19 +271,9 @@
             this.lOPBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.lOPBindingNavigator.Name = "lOPBindingNavigator";
             this.lOPBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.lOPBindingNavigator.Size = new System.Drawing.Size(582, 25);
+            this.lOPBindingNavigator.Size = new System.Drawing.Size(1000, 25);
             this.lOPBindingNavigator.TabIndex = 2;
             this.lOPBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -289,15 +281,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -359,6 +342,26 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // lOPBindingNavigatorSaveItem
             // 
             this.lOPBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -378,26 +381,44 @@
             this.toolStripButton1.Text = "Reload";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // v_DS_PHANMANHTableAdapter
+            // toolStripButton2
             // 
-            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Enabled = false;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Enabled = false;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 65);
+            this.panel1.Size = new System.Drawing.Size(1000, 65);
             this.panel1.TabIndex = 4;
             // 
             // sINHVIENGridControl
             // 
             this.sINHVIENGridControl.DataSource = this.sINHVIENBindingSource;
             this.sINHVIENGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sINHVIENGridControl.Location = new System.Drawing.Point(0, 303);
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(563, 90);
             this.sINHVIENGridControl.MainView = this.gridView2;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(582, 194);
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(437, 407);
             this.sINHVIENGridControl.TabIndex = 6;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -416,14 +437,20 @@
             this.colGHICHU});
             this.gridView2.GridControl = this.sINHVIENGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.OptionsView.ShowViewCaption = true;
+            this.gridView2.ViewCaption = "Danh sách sinh viên";
+            this.gridView2.ViewCaptionHeight = 1;
             this.gridView2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView2_MouseDown);
             // 
             // colMASV
             // 
             this.colMASV.FieldName = "MASV";
             this.colMASV.Name = "colMASV";
+            this.colMASV.OptionsColumn.ReadOnly = true;
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
+            this.colMASV.Width = 60;
             // 
             // colHO
             // 
@@ -431,6 +458,7 @@
             this.colHO.Name = "colHO";
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
+            this.colHO.Width = 88;
             // 
             // colTEN
             // 
@@ -438,6 +466,7 @@
             this.colTEN.Name = "colTEN";
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
+            this.colTEN.Width = 36;
             // 
             // colPHAI
             // 
@@ -445,6 +474,7 @@
             this.colPHAI.Name = "colPHAI";
             this.colPHAI.Visible = true;
             this.colPHAI.VisibleIndex = 3;
+            this.colPHAI.Width = 25;
             // 
             // colNGAYSINH
             // 
@@ -452,6 +482,7 @@
             this.colNGAYSINH.Name = "colNGAYSINH";
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 4;
+            this.colNGAYSINH.Width = 42;
             // 
             // colNOISINH
             // 
@@ -459,6 +490,7 @@
             this.colNOISINH.Name = "colNOISINH";
             this.colNOISINH.Visible = true;
             this.colNOISINH.VisibleIndex = 5;
+            this.colNOISINH.Width = 46;
             // 
             // colDIACHI
             // 
@@ -466,6 +498,7 @@
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 6;
+            this.colDIACHI.Width = 50;
             // 
             // colNGHIHOC
             // 
@@ -473,6 +506,7 @@
             this.colNGHIHOC.Name = "colNGHIHOC";
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 7;
+            this.colNGHIHOC.Width = 31;
             // 
             // colGHICHU
             // 
@@ -480,6 +514,7 @@
             this.colGHICHU.Name = "colGHICHU";
             this.colGHICHU.Visible = true;
             this.colGHICHU.VisibleIndex = 8;
+            this.colGHICHU.Width = 40;
             // 
             // contextMenuStrip1
             // 
@@ -488,30 +523,62 @@
             this.contextMenuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
-            this.btnXoa});
+            this.btnXoa,
+            this.btnGhi,
+            this.lamMơiToolStripMenuItem,
+            this.cntUndo,
+            this.cntRedo});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 158);
             // 
             // btnThem
             // 
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(152, 22);
+            this.btnThem.Size = new System.Drawing.Size(121, 22);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(152, 22);
+            this.btnXoa.Size = new System.Drawing.Size(121, 22);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(121, 22);
+            this.btnGhi.Text = "Ghi";
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // cntUndo
+            // 
+            this.cntUndo.Name = "cntUndo";
+            this.cntUndo.Size = new System.Drawing.Size(121, 22);
+            this.cntUndo.Text = "Undo";
+            this.cntUndo.Click += new System.EventHandler(this.cntUndo_Click);
+            // 
+            // cntRedo
+            // 
+            this.cntRedo.Name = "cntRedo";
+            this.cntRedo.Size = new System.Drawing.Size(121, 22);
+            this.cntRedo.Text = "Redo";
+            this.cntRedo.Click += new System.EventHandler(this.cntRedo_Click);
+            // 
+            // lamMơiToolStripMenuItem
+            // 
+            this.lamMơiToolStripMenuItem.Name = "lamMơiToolStripMenuItem";
+            this.lamMơiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lamMơiToolStripMenuItem.Text = "Làm mới";
+            this.lamMơiToolStripMenuItem.Click += new System.EventHandler(this.lamMơiToolStripMenuItem_Click);
             // 
             // Lop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 497);
+            this.ClientSize = new System.Drawing.Size(1000, 497);
             this.Controls.Add(this.sINHVIENGridControl);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.lOPBindingNavigator);
@@ -526,7 +593,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingNavigator)).EndInit();
             this.lOPBindingNavigator.ResumeLayout(false);
             this.lOPBindingNavigator.PerformLayout();
@@ -559,13 +625,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton lOPBindingNavigatorSaveItem;
-        private System.Windows.Forms.BindingSource vDSPHANMANHBindingSource;
-        private QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.GridControl lOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
         private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
@@ -584,5 +647,12 @@
         private System.Windows.Forms.ToolStripMenuItem btnThem;
         private System.Windows.Forms.ToolStripMenuItem btnXoa;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem btnGhi;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem cntUndo;
+        private System.Windows.Forms.ToolStripMenuItem cntRedo;
+        private System.Windows.Forms.ToolStripMenuItem lamMơiToolStripMenuItem;
     }
 }

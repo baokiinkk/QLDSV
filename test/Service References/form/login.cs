@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 
 namespace test.form
 {
@@ -10,18 +12,46 @@ namespace test.form
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet1.SINHVIEN);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.GIANGVIEN' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter1.Fill(this.qLDSVDataSet1.V_DS_PHANMANH);
-           
+            string kn = "Data Source=DESKTOP-J8Q68TT;Initial Catalog=" + Program.database + ";Integrated Security=True";
+            Program.conn.ConnectionString = kn;
+            DataTable data = new DataTable();
+            //gọi 1 view và trả về dưới dạng datatable
+            data = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
+            Program.Bds_Dspm.DataSource = data;
+            //// cất dt vào biến toàn cục Bds_Dspm
+            Program.Bds_Dspm.Sort = "TENCN ASC";
+            // đoạn code liên kết giữa bds với combobox
+            func.BindingDataToComBo(cb, data);
             Program.servername = cb.SelectedValue.ToString();
-            try { cb.Items.RemoveAt(2); } catch { }
+          
                 
             
         }
@@ -37,6 +67,7 @@ namespace test.form
                 return;
             }
             Program.mKhoa =cb.SelectedIndex;
+            Program.mKhoatmp = cb.SelectedIndex;
             Program.mlogin = edtTaiKhoan.Text;
             Program.password = edtMatKhau.Text;
             if (Program.KetNoi() == 0) return;
@@ -94,6 +125,15 @@ namespace test.form
             Close();
         }
 
-      
+        internal void Form1_Load()
+        {
+            cb.SelectedIndex = Program.mKhoa;
+            Program.servername = cb.SelectedValue.ToString();
+        }
+
+        private void mASVLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            sINHVIENBindingSource.Position = mASVLookUpEdit.ItemIndex;
+        }
     }
 }
